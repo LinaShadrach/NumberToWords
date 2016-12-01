@@ -21,7 +21,7 @@ namespace  NumToWord
     [InlineData("71000182", "seventy-one million one hundred eighty-two")]
     [InlineData("71000182", "seventy-one million one hundred eighty-two")]
     [InlineData("2001004003005008", "two quadrillion one trillion four billion three million five thousand eight")]
-    [InlineData("0", "zero")]
+    [InlineData("0000000000000000000000000000000000000000000000000", "zero")]
 
     public void ConvertNum_Digits_true(string input, string expected)
     {

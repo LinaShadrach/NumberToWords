@@ -8,7 +8,7 @@
 
 
 ## Specs
-#### 1. The program returns the corresponding word for any single digit. (0, 1, 2...) => ("zero", "one", "two"...)
+#### 1. The program returns the corresponding word for any single digit but 0. (1, 2...) => (one", "two"...)
 
 #### 2. The program returns the corresponding word for numbers between 9 and 13. (10, 11, 12) => ("ten", "eleven", "twelve")
 
@@ -24,6 +24,7 @@
 
 #### 8. The program returns the corresponding word for numbers between 999 and 999,999,999,999,999,999. (839,117,910,808,700,001,...) => ("eight hundred thirty-nine quadrillion one hundred seventeen trillion nine hundred ten billion eight hundred eight million seven hundred thousand one"...)
 
+#### 9. The program returns "zero" if the input is equal to zero.
 ## Setup/Installation Requirements
 
 * _Download the repository [here](https://github.com/LinaShadrach/NumberToWords.git "Number to Words"). Run on Windows with Powershell. In powershell, navigate into the repository directory and use command >dnx kestrel to run. Open up any browser window and enter localhost:5004 into URL search bar._

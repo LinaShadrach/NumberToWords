@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace NumToWord.Objects
 {
@@ -54,13 +55,12 @@ namespace NumToWord.Objects
 
       List<string> inputChunks = SliceInput();
       int count = inputChunks.Count-1;
-
-
-      // if (0 == Convert.ToInt32(this.InputString))
-      // {
-      //   this.OutputWord = "zero";
-      // }
-      // else{
+      Regex all0= new Regex("0");
+      if (all0.Matches(this.InputString).Count == this.InputString.Length)
+      {
+        this.OutputWord = "zero";
+      }
+      else{
         foreach(string chunk in inputChunks)
         {
           int chunkInt = Convert.ToInt32(chunk);
@@ -106,7 +106,7 @@ namespace NumToWord.Objects
             this.OutputWord += illions[count];
           }
           count--;
-        // }
+        }
       }
     }
   }
