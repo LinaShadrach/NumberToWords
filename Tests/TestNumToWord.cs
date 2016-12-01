@@ -11,6 +11,7 @@ namespace  NumToWord
     [InlineData("2", "two")]
     [InlineData("12", "twelve")]
     [InlineData("14", "fourteen")]
+    [InlineData("60", "sixty")]
 
     public void Convert_Digits_true(string input, string expected)
     {

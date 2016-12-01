@@ -24,7 +24,13 @@ namespace NumToWord.Objects
       Dictionary<char, string> ref9Under = new Dictionary<char, string>() {{'0', "zero"}, {'1', "one"}, {'2', "two"}, {'3', "three"}, {'4', "four"}, {'5', "five"}, {'6', "six"}, {'7', "seven"}, {'8', "eight"}, {'9', "nine"}};
       Dictionary<char, string> ref12Under = new Dictionary<char, string>() {{'0', "ten"}, {'1', "eleven"}, {'2', "twelve"}};
       Dictionary<char, string> refTeens = new Dictionary<char, string>() {{'3', "thir"}, {'4', "four"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
+      Dictionary<char, string> refTruncated = new Dictionary<char, string>() {{'2', "twen"}, {'3', "thir"}, {'4', "for"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
 
+      if(this.InputNumber < 91 && this.InputNumber > 19)
+      {
+        this.OutputWord += refTruncated[inputChars[index-1]] + "ty";
+        this.InputNumber -= this.InputNumber;
+      }
       if(this.InputNumber < 20 && this.InputNumber > 12)
       {
         this.OutputWord += refTeens[inputChars[index]] + "teen";
