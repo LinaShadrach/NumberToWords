@@ -12,14 +12,15 @@ namespace  NumToWord
     [InlineData("12", "twelve")]
     [InlineData("14", "fourteen")]
     [InlineData("60", "sixty")]
+    [InlineData("53", "fiftythree")]
 
-    public void Convert_Digits_true(string input, string expected)
+    public void ConvertNum_Digits_true(string input, string expected)
     {
       //Arrange
       Word newWord = new Word(input);
       string expectedResult = expected;
       //Act
-      newWord.Convert();
+      newWord.ConvertNum();
       //Assert
       Assert.Equal(expectedResult, newWord.OutputWord);
     }

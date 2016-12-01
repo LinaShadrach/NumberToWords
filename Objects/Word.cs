@@ -16,7 +16,7 @@ namespace NumToWord.Objects
       this.OutputWord = "";
     }
 
-    public void Convert()
+    public void ConvertNum()
     {
       char[] inputChars = InputString.ToCharArray();
       int index = inputChars.Length - 1;
@@ -29,7 +29,9 @@ namespace NumToWord.Objects
       if(this.InputNumber < 91 && this.InputNumber > 19)
       {
         this.OutputWord += refTruncated[inputChars[index-1]] + "ty";
-        this.InputNumber -= this.InputNumber;
+        int val = inputChars[index-1] - '0';
+        this.InputNumber -= val * 10;
+        // index--;
       }
       if(this.InputNumber < 20 && this.InputNumber > 12)
       {
@@ -41,7 +43,7 @@ namespace NumToWord.Objects
         this.OutputWord += ref12Under[inputChars[index]];
         this.InputNumber -= this.InputNumber;
       }
-      if(this.InputNumber < 10 && this.InputNumber !=0)
+      if(this.InputNumber < 10 && this.InputNumber > 0)
       {
         this.OutputWord += ref9Under[inputChars[index]];
       }
