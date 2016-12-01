@@ -26,11 +26,25 @@ namespace NumToWord.Objects
       Dictionary<char, string> refTeens = new Dictionary<char, string>() {{'3', "thir"}, {'4', "four"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
       Dictionary<char, string> refTruncated = new Dictionary<char, string>() {{'2', "twen"}, {'3', "thir"}, {'4', "for"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
 
+      if(this.InputNumber < 999 && this.InputNumber > 99 )
+      {
+        this.OutputWord += ref9Under[inputChars[index-2]] + " hundred";
+        int val = inputChars[index-2] - '0';
+        this.InputNumber -= val * 100;
+        if (this.InputNumber > 0)
+        {
+          this.OutputWord += " ";
+        }
+      }
       if(this.InputNumber < 91 && this.InputNumber > 19)
       {
         this.OutputWord += refTruncated[inputChars[index-1]] + "ty";
         int val = inputChars[index-1] - '0';
         this.InputNumber -= val * 10;
+        if (this.InputNumber > 0)
+        {
+          this.OutputWord += "-";
+        }
         // index--;
       }
       if(this.InputNumber < 20 && this.InputNumber > 12)

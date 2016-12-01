@@ -12,7 +12,11 @@ namespace  NumToWord
     [InlineData("12", "twelve")]
     [InlineData("14", "fourteen")]
     [InlineData("60", "sixty")]
-    [InlineData("53", "fiftythree")]
+    [InlineData("53", "fifty-three")]
+    [InlineData("100", "one hundred")]
+    [InlineData("530", "five hundred thirty")]
+    [InlineData("514", "five hundred fourteen")]
+    [InlineData("711", "seven hundred eleven")]
 
     public void ConvertNum_Digits_true(string input, string expected)
     {
