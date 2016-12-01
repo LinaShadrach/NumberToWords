@@ -20,7 +20,9 @@
 
 #### 6. The program returns the corresponding word for multiples of 100 between 99 and 901. (100, 200, 300...) => ("one hundred", "two hundred", "three hundred"...)
 
+#### 7. The program returns the corresponding word for numbers between 99 and 999. (103, 215, 839...) => ("one hundred three", "two hundred fifteen", "eight hundred thirty-nine"...)
 
+#### 8. The program returns the corresponding word for numbers between 999 and 999,999,999,999,999,999. (839,117,910,808,700,001,...) => ("eight hundred thirty-nine quadrillion one hundred seventeen trillion nine hundred ten billion eight hundred eight million seven hundred thousand one"...)
 
 ## Setup/Installation Requirements
 
