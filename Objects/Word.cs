@@ -19,10 +19,11 @@ namespace NumToWord.Objects
     {
       List<string> chunkList = new List<string>{};
       string input = this.InputString;
-      int chunks = this.InputString.Length/3;
+      float chunksFloat = (float)this.InputString.Length/3;
+      int chunks = (int)Math.Ceiling(chunksFloat);
       if (input.Length > 3)
       {
-        for (int i=0; i < chunks+1; i++)
+        for (int i=0; i < chunks; i++)
         {
           if (input.Length > 2)
           {
@@ -51,7 +52,7 @@ namespace NumToWord.Objects
       Dictionary<char, string> ref12Under = new Dictionary<char, string>() {{'0', "ten"}, {'1', "eleven"}, {'2', "twelve"}};
       Dictionary<char, string> refTeens = new Dictionary<char, string>() {{'3', "thir"}, {'4', "four"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
       Dictionary<char, string> refTruncated = new Dictionary<char, string>() {{'2', "twen"}, {'3', "thir"}, {'4', "for"}, {'5', "fif"}, {'6', "six"}, {'7', "seven"}, {'8', "eigh"}, {'9', "nine"}};
-      string[] illions = {"", " thousand ", " million ", " billion ", " trillion ", " quadrillion "};
+      string[] illions = {"", " thousand ", " million ", " billion ", " trillion ", " quadrillion ", " quintillion ", " sextillion ", " septillion ", " octillion ", " nonillion ", " decillion ", " undecillion ", " duodecillion ", " tredecillion ", " quattuordecillion ", " quinquadecillion ", " sedecillion ", " septendecillion ", " octodecillion ", " novendecillion "};
 
       List<string> inputChunks = SliceInput();
       int count = inputChunks.Count-1;
@@ -68,7 +69,7 @@ namespace NumToWord.Objects
           int index = inputChars.Length - 1;
           if (chunkInt > 0)
           {
-            if(chunkInt < 999 && chunkInt > 99 )
+            if(chunkInt < 1000 && chunkInt > 99 )
             {
               this.OutputWord += ref9Under[inputChars[index-2]] + " hundred";
               int val = inputChars[index-2] - '0';
@@ -78,7 +79,7 @@ namespace NumToWord.Objects
                 this.OutputWord += " ";
               }
             }
-            if(chunkInt < 91 && chunkInt > 19)
+            if(chunkInt < 100 && chunkInt > 19)
             {
               this.OutputWord += refTruncated[inputChars[index-1]] + "ty";
               int val = inputChars[index-1] - '0';
